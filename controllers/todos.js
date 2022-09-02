@@ -5,8 +5,15 @@ module.exports = {
         console.log(req.user)
         try{
             //gets todo data from database
-            const todoItems = await Todo.find({userId:req.user.id})
-            const itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
+            let todoItems;
+            let itemsLeft;
+            if (req.user.chef === 'on') {
+                todoItems = await Todo.find()
+                itemsLeft = await Todo.countDocuments({completed: false})
+            } else {
+                todoItems = await Todo.find({userId:req.user.id})
+                itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
+            }
             //renders todos page, passes in todo data
             res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
         }catch(err){
@@ -24,6 +31,7 @@ module.exports = {
     },
     markComplete: async (req, res)=>{
         try{
+            if (req.user.chef !== 'on') return;
             await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
                 completed: true
             })
@@ -35,6 +43,7 @@ module.exports = {
     },
     markIncomplete: async (req, res)=>{
         try{
+            if (req.user.chef !== 'on') return;
             await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
                 completed: false
             })

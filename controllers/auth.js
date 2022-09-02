@@ -79,9 +79,10 @@ const User = require('../models/User')
     const user = new User({
       userName: req.body.userName,
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      chef: req.body.chef
     })
-  
+    
     //sends a findOne request to the User model
     //User model searches database for accounts with matching email address or username
     //If it finds one, returns error and redirects back to signup

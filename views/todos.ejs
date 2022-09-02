@@ -10,28 +10,33 @@
 </head>
 
 <body>
-    <h1>Todos</h1>
+    <h1>Orders</h1>
     <ul>
         <% todos.forEach( el=> { %>
             <li class='todoItem' data-id='<%=el._id%>'>
                 <span class='<%= el.completed === true ? ' completed' : 'not' %>'><%= el.todo %></span>
-                <span class='del'> Delete </span>
+                <% if (user.chef !=='on' ) { %>
+                    <span class='del'> Delete </span>
+                    <%}%>
             </li>
             <% }) %>
     </ul>
 
     <h2>
-        <%= user.userName %> has <%= left %> things left to do.
+        <%= user.userName %> has <%= left %> order<% if (left> 1 || left === 0) {%>s<%} %>%>.
     </h2>
 
-    <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-        <input type="submit">
-    </form>
+    <% if (user.chef !=='on' ) { %>
+        <form action="/todos/createTodo" method='POST'>
+            <input type="submit" name="todoItem" value="cheeseburger" placeholder="Cheeseburger">
+            <input type="submit" name="todoItem" value="hamburger" placeholder="Hamburger">
+            <input type="submit" name="todoItem" value="waffleburger" placeholder="Waffleburger">
+        </form>
+        <%}%>
 
-    <a href="/logout">Logout</a>
+            <a href="/logout">Logout</a>
 
-    <script src="js/main.js"></script>
+            <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -3,6 +3,7 @@ const router = express.Router()
 const todosController = require('../controllers/todos') 
 const { ensureAuth } = require('../middleware/auth')
 
+//ensureAuth is the login check step
 router.get('/', ensureAuth, todosController.getTodos)
 
 router.post('/createTodo', todosController.createTodo)

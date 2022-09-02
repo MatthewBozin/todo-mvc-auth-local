@@ -4,8 +4,10 @@ module.exports = {
     getTodos: async (req,res)=>{
         console.log(req.user)
         try{
+            //gets todo data from database
             const todoItems = await Todo.find({userId:req.user.id})
             const itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
+            //renders todos page, passes in todo data
             res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
         }catch(err){
             console.log(err)

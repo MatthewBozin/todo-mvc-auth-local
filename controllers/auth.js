@@ -3,7 +3,8 @@ const validator = require('validator')
 const User = require('../models/User')
 
  exports.getLogin = (req, res) => {
-    if (req.user) {
+  //if user is logged in, redirects them to todos, otherwise redirects to login
+  if (req.user) {
       return res.redirect('/todos')
     }
     res.render('login', {
@@ -12,16 +13,19 @@ const User = require('../models/User')
   }
   
   exports.postLogin = (req, res, next) => {
+    console.log(req.body);
+    //uses package 'validator' to do password validation
     const validationErrors = []
     if (!validator.isEmail(req.body.email)) validationErrors.push({ msg: 'Please enter a valid email address.' })
     if (validator.isEmpty(req.body.password)) validationErrors.push({ msg: 'Password cannot be blank.' })
-  
+    //if validation error is thrown, display error and redirect to signup
     if (validationErrors.length) {
       req.flash('errors', validationErrors)
       return res.redirect('/login')
     }
-    req.body.email = validator.normalizeEmail(req.body.email, { gmail_remove_dots: false })
-  
+    req.body.email = validator.normalizeEmail(req.body.email, { gmail_remove_dots: false }) 
+    //uses 'local' strategy from passport
+    //securely matches input password to hash stored in database
     passport.authenticate('local', (err, user, info) => {
       if (err) { return next(err) }
       if (!user) {
@@ -36,6 +40,7 @@ const User = require('../models/User')
     })(req, res, next)
   }
   
+  //on clicking the logout button, logs user out and destroys their session
   exports.logout = (req, res) => {
     req.logout(() => {
       console.log('User has logged out.')
@@ -47,6 +52,8 @@ const User = require('../models/User')
     })
   }
   
+  //when user clicks the 'signup' button, redirects them to todos page if they're logged in already
+  //otherwise redirects them to 'signup' page
   exports.getSignup = (req, res) => {
     if (req.user) {
       return res.redirect('/todos')
@@ -57,11 +64,12 @@ const User = require('../models/User')
   }
   
   exports.postSignup = (req, res, next) => {
+    //uses package 'validator' to do password validation
     const validationErrors = []
     if (!validator.isEmail(req.body.email)) validationErrors.push({ msg: 'Please enter a valid email address.' })
     if (!validator.isLength(req.body.password, { min: 8 })) validationErrors.push({ msg: 'Password must be at least 8 characters long' })
     if (req.body.password !== req.body.confirmPassword) validationErrors.push({ msg: 'Passwords do not match' })
-  
+    //if validation error is thrown, display error and redirect to signup
     if (validationErrors.length) {
       req.flash('errors', validationErrors)
       return res.redirect('../signup')
@@ -74,6 +82,9 @@ const User = require('../models/User')
       password: req.body.password
     })
   
+    //sends a findOne request to the User model
+    //User model searches database for accounts with matching email address or username
+    //If it finds one, returns error and redirects back to signup
     User.findOne({$or: [
       {email: req.body.email},
       {userName: req.body.userName}

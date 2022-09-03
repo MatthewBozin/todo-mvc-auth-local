@@ -18,12 +18,19 @@
             <li class='todoItem center big outline' data-id='<%=el._id%>'>
                 <span class='<%= el.completed === true ? ' completed' : 'not' %>'><%= el.todo %></span>
                 <% if (user.chef !=='on' ) { %>
+                    <span>
+                        $<%=el.foodData.price%>
+                    </span>
                     <span class='del'> Delete </span>
                     <%}%>
             </li>
             <% }) %>
     </ul>
-    
+
+    <h3 class="center">
+        Total: $<%= total%>
+    </h3>
+
     <h2 class="center outline">
         <%= user.userName %> has <%= left %> order<% if (left> 1 || left === 0) {%>s<%} %>%>.
     </h2>
@@ -32,9 +39,7 @@
         <form class="center" action="/todos/createTodo" method='POST'>
             <input a href class='butt cheeburger outline' type="submit" name="todoItem" value="Cheeseburger" placeholder="Cheeseburger">
             <input class='butt burger outline' type="submit" name="todoItem" value="Hamburger" placeholder="Hamburger">
-            <input class='butt waffle outline' type="submit" name="todoItem" value="Waffleburger" placeholder="Waffleburger">
-            
-           
+            <input class='butt waffle outline' type="submit" name="todoItem" value="Waffleburger" placeholder="Waffleburger"><br>
         </form>
 
         <form class="center" action="/todos/createTodo" method='POST'>

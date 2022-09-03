@@ -1,4 +1,5 @@
 const Todo = require('../models/Todo')
+const Food = require('../public/data/food.json')
 
 module.exports = {
     getTodos: async (req,res)=>{
@@ -14,8 +15,10 @@ module.exports = {
                 todoItems = await Todo.find({userId:req.user.id})
                 itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
             }
+            todoItems.map((item) => {item.foodData = Food[item.todo.toLowerCase()]})
+            const total = todoItems.reduce((acc, el) => {return acc+el.foodData.price},0)
             //renders todos page, passes in todo data
-            res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
+            res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user, total: total})
         }catch(err){
             console.log(err)
         }

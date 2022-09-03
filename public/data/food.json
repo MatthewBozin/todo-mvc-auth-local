@@ -1,0 +1,27 @@
+{
+    "cheeseburger":{
+        "name":"Cheeseburger",
+        "price":4.99,
+        "class":"butt cheeburger"
+    },
+    "burger":{
+        "name":"Cheeseburger",
+        "price":4.99,
+        "class":"butt burger"
+    },
+    "waffleburger":{
+        "name":"Waffle burger",
+        "price":4.99,
+        "class":"butt waffle"
+    },
+    "fries":{
+        "name":"Fries",
+        "price":4.99,
+        "class":"butt fries"
+    },
+    "drink":{
+        "name":"Drink",
+        "price":4.99,
+        "class":"butt drink"
+    }
+}

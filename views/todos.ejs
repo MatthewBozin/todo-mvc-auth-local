@@ -9,38 +9,62 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <h1 class="center">Orders</h1>
+<body class="todoBackg">
+    <section class="topBit" >
+
+    <h1 class="center outline">Orders</h1>
     <ul>
         <% todos.forEach( el=> { %>
-            <li class='todoItem center' data-id='<%=el._id%>'>
+            <li class='todoItem center big outline' data-id='<%=el._id%>'>
                 <span class='<%= el.completed === true ? ' completed' : 'not' %>'><%= el.todo %></span>
                 <% if (user.chef !=='on' ) { %>
-                    <span class='del'> Delete </span>
+                    <span>
+                        $<%=el.foodData.price%>
+                    </span>
+                    <span class='del'>     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                      </svg></span>
                     <%}%>
             </li>
             <% }) %>
     </ul>
 
-    <h2 class="center">
+    <h3 class="center">
+        Total: $<%= total%>
+    </h3>
+
+    <h2 class="center outline">
         <%= user.userName %> has <%= left %> order<% if (left> 1 || left === 0) {%>s<%} %>%>.
     </h2>
-
+</section>
     <% if (user.chef !=='on' ) { %>
         <form class="center" action="/todos/createTodo" method='POST'>
-            <input a href class='butt cheeburger' type="submit" name="todoItem" value="Cheeseburger" placeholder="Cheeseburger">
-            <input class='butt burger' type="submit" name="todoItem" value="Hamburger" placeholder="Hamburger">
-            <input class='butt waffle' type="submit" name="todoItem" value="Waffleburger" placeholder="Waffleburger"><br>
-            
-           
+            <input a href class='butt cheeburger outline' type="submit" name="todoItem" value="Cheeseburger" placeholder="Cheeseburger">
+            <input class='butt burger outline' type="submit" name="todoItem" value="Hamburger" placeholder="Hamburger">
+            <input class='butt waffle outline' type="submit" name="todoItem" value="Waffleburger" placeholder="Waffleburger"><br>
         </form>
 
         <form class="center" action="/todos/createTodo" method='POST'>
-            <input class='butt fries' type="submit" name="todoItem" value="Fries" placeholder="Fries">
-            <input class='butt drink' type="submit" name="todoItem" value="Drinks" placeholder="Drink">
+            <input class='buttOn fries outline' type="submit" name="todoItem" value="Fries" placeholder="Fries">
+            <input class='buttOn fries outline' type="submit" name="todoItem" value="Fries" placeholder="Fries">
+            <input class='buttOn fries outline' type="submit" name="todoItem" value="Fries" placeholder="Fries">
+        </form>
+
+        <form class="center" action="/todos/createTodo" method='POST'>
+            <input class='leButt fries outline' type="submit" name="todoItem" value="Fries" placeholder="Fries">
+            <input class='leButt fries outline' type="submit" name="todoItem" value="Fries" placeholder="Fries">
+            <input class='leButt fries outline' type="submit" name="todoItem" value="Fries" placeholder="Fries">
+            <input class='leButt fries outline' type="submit" name="todoItem" value="Fries" placeholder="Fries">
         </form>
         <%}%>
-            <div class="center log">
+        <form class="center" action="/todos/createTodo" method='POST'>
+            <input class='butt coke' type="submit" name="todoItem" value="Coke" placeholder="Coke">
+            <input class='butt coke_zero' type="submit" name="todoItem" value="Coke Zero" placeholder="Coke Zero">
+            <input class='butt diet_coke' type="submit" name="todoItem" value="Diet Coke" placeholder="Diet Coke">
+            <input class='butt sprite' type="submit" name="todoItem" value="Sprite" placeholder="Sprite">
+        </form>
+            <div class="center log outline">
                 <a href="/logout">Logout</a>
             </div>
             <script src="js/main.js"></script>

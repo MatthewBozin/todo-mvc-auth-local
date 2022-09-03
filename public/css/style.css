@@ -1,5 +1,8 @@
+
+
 h1{
-    color: whitesmoke;
+
+    color: orange;
     font-size: 4em;
 
 }
@@ -27,6 +30,7 @@ h1{
 .center{
     display: flex;
     justify-content: center;
+      
 }
 
 .log{
@@ -111,6 +115,22 @@ h1{
 .fries{
     background-image: url(images/fries.jpg);
     background-size: cover;
+}
+
+.login{
+    
+    background-size: cover;
+    background-image: url("istockphoto-959839190-612x612burger.jpg");
+    background-color: black;
+    background-repeat: no-repeat;
+}
+
+.login .McRonalds{
+    font-size: 70px;
+    color: yellow;
+    text-align: center;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .todoBackg{

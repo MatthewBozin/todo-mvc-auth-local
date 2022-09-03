@@ -1,7 +1,21 @@
 h1{
-    color: red;
-    
+    color: whitesmoke;
+    font-size: 4em;
+
 }
+
+.topBit{
+    border: 1px black solid;
+    background-color: black;
+    opacity: 0.5;
+    width: auto;
+    color: whitesmoke
+}
+
+.big{
+    font: 2em;
+}
+
 .completed{
     text-decoration: line-through;
     color: gray;
@@ -16,9 +30,13 @@ h1{
 }
 
 .log{
-    font-size: 2em;
+    font-size: 4em;
+    color: whitesmoke;
+    width: auto;
+    
 }
 
+/* buttons */
 .butt{
     margin: 1em;
     padding: 4em 3em ;
@@ -27,23 +45,40 @@ h1{
     float:inline-end;
 }
 
+.buttOn{
+    margin: 1em;
+    padding: 3em 3em ;
+    color: aliceblue;
+    font-size: 2em;
+    float:inline-end;
+}
+
+.leButt{
+    margin: 1em;
+    padding: 2em 3em ;
+    color: aliceblue;
+    font-size: 2em;
+    float:inline-end;
+}
+
+/* pictures */
 .cheeburger{
-    background-image: url(cheesebur.jpg);
+    background-image: url(images/cheesebur.jpg);
     background-size: contain;
 }
 
 .burger{
-    background-image: url(burger.jpg);
+    background-image: url(images/burger.jpg);
     background-size: cover;
 }
 
 .waffle{
-    background-image: url(waffle.jpg);
+    background-image: url(images/waffle.jpg);
     background-size: cover;
 }
 
 .drink{
-    background-image: url(drink.jpg);
+    background-image: url(images/drink.jpg);
     background-size: cover;
     color: red
 }
@@ -74,6 +109,15 @@ h1{
 
 
 .fries{
-    background-image: url(fries.jpg);
+    background-image: url(images/fries.jpg);
     background-size: cover;
+}
+
+.todoBackg{
+    background-image: url(images/bubbles.jpg);
+    background-size: cover;
+}
+
+.outline{
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }

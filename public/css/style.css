@@ -1,5 +1,6 @@
 h1{
     color: red;
+    
 }
 .completed{
     text-decoration: line-through;
@@ -7,4 +8,46 @@ h1{
 }
 .not{
     text-decoration: underline;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+
+.log{
+    font-size: 2em;
+}
+
+.butt{
+    margin: 1em;
+    padding: 4em 3em ;
+    color: aliceblue;
+    font-size: 2em;
+    float:inline-end;
+}
+
+.cheeburger{
+    background-image: url(cheesebur.jpg);
+    background-size: contain;
+}
+
+.burger{
+    background-image: url(burger.jpg);
+    background-size: cover;
+}
+
+.waffle{
+    background-image: url(waffle.jpg);
+    background-size: cover;
+}
+
+.drink{
+    background-image: url(drink.jpg);
+    background-size: cover;
+}
+
+.fries{
+    background-image: url(fries.jpg);
+    background-size: cover;
 }

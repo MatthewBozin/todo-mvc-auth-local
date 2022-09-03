@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <h1 class="center">Orders</h1>
+<body class="todoBackg">
+    <section class="topBit" >
+
+    <h1 class="center outline">Orders</h1>
     <ul>
         <% todos.forEach( el=> { %>
-            <li class='todoItem center' data-id='<%=el._id%>'>
+            <li class='todoItem center big outline' data-id='<%=el._id%>'>
                 <span class='<%= el.completed === true ? ' completed' : 'not' %>'><%= el.todo %></span>
                 <% if (user.chef !=='on' ) { %>
                     <span>
@@ -29,25 +31,31 @@
         Total: $<%= total%>
     </h3>
 
-    <h2 class="center">
+    <h2 class="center outline">
         <%= user.userName %> has <%= left %> order<% if (left> 1 || left === 0) {%>s<%} %>%>.
     </h2>
-
+</section>
     <% if (user.chef !=='on' ) { %>
         <form class="center" action="/todos/createTodo" method='POST'>
-            <input a href class='butt cheeburger' type="submit" name="todoItem" value="Cheeseburger"
-                placeholder="Cheeseburger">
-            <input class='butt burger' type="submit" name="todoItem" value="Hamburger" placeholder="Hamburger">
-            <input class='butt waffle' type="submit" name="todoItem" value="Waffleburger"
-                placeholder="Waffleburger"><br>
+            <input a href class='butt cheeburger outline' type="submit" name="todoItem" value="Cheeseburger" placeholder="Cheeseburger">
+            <input class='butt burger outline' type="submit" name="todoItem" value="Hamburger" placeholder="Hamburger">
+            <input class='butt waffle outline' type="submit" name="todoItem" value="Waffleburger" placeholder="Waffleburger"><br>
         </form>
 
         <form class="center" action="/todos/createTodo" method='POST'>
-            <input class='butt fries' type="submit" name="todoItem" value="Fries" placeholder="Fries">
-            <input class='butt drink' type="submit" name="todoItem" value="Drinks" placeholder="Drink">
+            <input class='buttOn fries outline' type="submit" name="todoItem" value="Fries" placeholder="Fries">
+            <input class='buttOn fries outline' type="submit" name="todoItem" value="Fries" placeholder="Fries">
+            <input class='buttOn fries outline' type="submit" name="todoItem" value="Fries" placeholder="Fries">
+        </form>
+
+        <form class="center" action="/todos/createTodo" method='POST'>
+            <input class='leButt fries outline' type="submit" name="todoItem" value="Fries" placeholder="Fries">
+            <input class='leButt fries outline' type="submit" name="todoItem" value="Fries" placeholder="Fries">
+            <input class='leButt fries outline' type="submit" name="todoItem" value="Fries" placeholder="Fries">
+            <input class='leButt fries outline' type="submit" name="todoItem" value="Fries" placeholder="Fries">
         </form>
         <%}%>
-            <div class="center log">
+            <div class="center log outline">
                 <a href="/logout">Logout</a>
             </div>
             <script src="js/main.js"></script>

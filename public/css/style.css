@@ -45,7 +45,33 @@ h1{
 .drink{
     background-image: url(drink.jpg);
     background-size: cover;
+    color: red
 }
+
+.coke {
+    background-image: url(drink.jpg);
+    background-size: cover;
+    color: red
+}
+
+.coke_zero {
+    background-image: url(coke_zero.jpg);
+    background-size: cover;
+    color: darkred
+}
+
+.diet_coke {
+    background-image: url(diet_coke.jpg);
+    background-size: cover;
+    color: darkslategrey
+}
+
+.sprite {
+    background-image: url(sprite.jpg);
+    background-size: cover;
+    color: green
+}
+
 
 .fries{
     background-image: url(fries.jpg);

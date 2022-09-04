@@ -5,23 +5,48 @@
         "class":"butt cheeburger"
     },
     "burger":{
-        "name":"Cheeseburger",
-        "price":4.99,
+        "name":"Hamburger",
+        "price":3.99,
         "class":"butt burger"
     },
     "waffleburger":{
         "name":"Waffle burger",
-        "price":4.99,
+        "price":5.99,
         "class":"butt waffle"
     },
-    "fries":{
-        "name":"Fries",
-        "price":4.99,
-        "class":"butt fries"
+    "smallfries":{
+        "name":"Small Fries",
+        "price":2.99,
+        "class":"buttOn small outline"
     },
-    "drink":{
-        "name":"Drink",
+    "mediumfries":{
+        "name":"Medium Fries",
+        "price":3.99,
+        "class":"buttOn medium outline"
+    },
+    "extrabig*ssfries":{
+        "name":"Extra Big *ss Fries",
         "price":4.99,
-        "class":"butt drink"
+        "class":"buttOn fries outline"
+    },
+    "coke":{
+        "name":"Coke",
+        "price":1.99,
+        "class":"leButt coke outline"
+    },
+    "cokezero":{
+        "name":"Coke Zero",
+        "price":2.99,
+        "class":"leButt coke_zero outline"
+    },
+    "dietcoke":{
+        "name":"Diet Coke",
+        "price":2.99,
+        "class":"leButt diet_coke outline"
+    },
+    "sprite":{
+        "name":"Sprite",
+        "price":1.99,
+        "class":"leButt sprite outline"
     }
 }

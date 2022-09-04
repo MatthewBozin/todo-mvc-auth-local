@@ -33,13 +33,15 @@
                 <% }) %>
         </ul>
 
-        <h3 class="center">
-            Total: $<%= total%>
-        </h3>
+        <% if (user.chef !=='on' ) { %>
+            <h3 class="center">
+                Total: $<%= total%>
+            </h3>
+            <%}%>
 
-        <h2 class="center outline">
-            <%= user.userName %> has <%= left %> order<% if (left> 1 || left === 0) {%>s<%} %>%>.
-        </h2>
+                <h2 class="center outline">
+                    <%= user.userName %> has <%= left %> order<% if (left> 1 || left === 0) {%>s<%} %>%>.
+                </h2>
     </section>
     <% if (user.chef !=='on' ) { %>
         <form class="center" action="/todos/createTodo" method='POST'>

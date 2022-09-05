@@ -34,6 +34,7 @@ module.exports = {
 
             //renders todos page, passes in data that will be consumed by todos.ejs
             res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user, total: total, foodList: foodList})
+
         }catch(err){
             console.log(err)
         }

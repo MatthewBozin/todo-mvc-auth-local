@@ -24,8 +24,8 @@
         "price":3.99,
         "class":"buttOn medium outline"
     },
-    "extrabig*ssfries":{
-        "name":"Extra Big *ss Fries",
+    "extralargefries":{
+        "name":"Extra Large Fries",
         "price":4.99,
         "class":"buttOn fries outline"
     },

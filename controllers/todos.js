@@ -9,19 +9,30 @@ module.exports = {
             let todoItems;
             let itemsLeft;
             if (req.user.chef === 'on') {
+                //if the user is a chef, display all todos
                 todoItems = await Todo.find()
                 itemsLeft = await Todo.countDocuments({completed: false})
             } else {
+                //if the user is not a chef, display only their todos
                 todoItems = await Todo.find({userId:req.user.id})
                 itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
             }
+
+            //for each item in todoItems array,
+            //use its todo text to find its entry in food.json and add that data as a property to the item object
             todoItems.map((item) => {item.foodData = food[item.todo.toLowerCase().replaceAll(" ", "")]})
+
+            //cycle through each item in todoItems and add its price to the total
+            //this is our culprit for the crashes 
             const total = todoItems.reduce((acc, el) => {
                 if (!el) return acc;
                 return acc+el.foodData.price
             },0).toFixed(2);
+
+            //turns food.json into an array of objects, one object for each type of food
             const foodList = Object.keys(food).map(key => food[key]);
-            //renders todos page, passes in todo data
+
+            //renders todos page, passes in data that will be consumed by todos.ejs
             res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user, total: total, foodList: foodList})
         }catch(err){
             console.log(err)

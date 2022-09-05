@@ -44,32 +44,17 @@
                 </h2>
     </section>
     <% if (user.chef !=='on' ) { %>
-        <form class="center" action="/todos/createTodo" method='POST'>
-            <input a href class='butt cheeburger outline' type="submit" name="todoItem" value="Cheeseburger"
-                placeholder="Cheeseburger">
-            <input class='butt burger outline' type="submit" name="todoItem" value="burger" placeholder="burger">
-            <input class='butt waffle outline' type="submit" name="todoItem" value="Waffleburger"
-                placeholder="Waffleburger"><br>
+        <form class="menu center" action="/todos/createTodo" method='POST'>
+            <% foodList.forEach( el=> { %>
+                <div class="item">
+                    <input class="<%=el.class %>" type="submit" name="todoItem" value="<%=el.name %>"
+                        placeholder="<%=el.name %>">
+                    <span>
+                        $<%=el.price %>
+                    </span>
+                </div>
+                <% }) %>
         </form>
-
-        <form class="center" action="/todos/createTodo" method='POST'>
-            <input class='buttOn small outline' type="submit" name="todoItem" value="Small Fries"
-                placeholder="Small Fries">
-            <input class='buttOn medium outline' type="submit" name="todoItem" value="Medium Fries"
-                placeholder="Medium Fries">
-            <input class='buttOn fries outline' type="submit" name="todoItem" value="Extra Large Fries"
-                placeholder="Extra Large Fries">
-        </form>
-
-        <form class="center" action="/todos/createTodo" method='POST'>
-            <input class='leButt coke outline' type="submit" name="todoItem" value="Coke" placeholder="Coke">
-            <input class='leButt coke_zero outline' type="submit" name="todoItem" value="Coke Zero"
-                placeholder="Coke Zero">
-            <input class='leButt diet_coke outline' type="submit" name="todoItem" value="Diet Coke"
-                placeholder="Diet Coke">
-            <input class='leButt sprite outline' type="submit" name="todoItem" value="Sprite" placeholder="Sprite">
-        </form>
-
         <%}%>
 
             <div class="center log outline">

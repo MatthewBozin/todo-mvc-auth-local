@@ -1,71 +1,81 @@
-h1{
+h1 {
     color: orange;
     font-size: 4em;
 }
 
-.completed{
+.completed {
     text-decoration: line-through;
     color: gray;
 }
 
-.not{
+.not {
     text-decoration: underline;
 }
 
-.log{
+.log {
     font-size: 4em;
     color: whitesmoke;
     width: auto;
-    
+
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* buttons */
-.butt{
+.butt {
     margin: 1em;
-    padding: 4em 3em ;
+    padding: 4em 3em;
     color: aliceblue;
     font-size: 2em;
-    float:inline-end;
+    float: inline-end;
 }
 
-.buttOn{
+.buttOn {
     margin: 1em;
-    padding: 3em 3em ;
+    padding: 3em 3em;
     color: aliceblue;
     font-size: 2em;
-    float:inline-end;
+    float: inline-end;
 }
 
-.leButt{
+.leButt {
     margin: 1em;
-    padding: 3em 3em ;
+    padding: 3em 3em;
     color: aliceblue;
     font-size: 2em;
-    float:inline-end;
+    float: inline-end;
 }
 
 /* Burgers */
-.cheeburger{
+.cheeburger {
     background-image: url(images/cheesebur.jpg);
     background-size: contain;
 }
 
-.burger{
+.burger {
     background-image: url(images/burger.jpg);
     background-size: cover;
 }
 
-.waffle{
+.waffle {
     background-image: url(images/waffle.jpg);
     background-size: cover;
 }
 
 /* Drinks */
-.drink{
+.drink {
     background-image: url(images/drink.jpg);
     background-size: cover;
     color: red
-
 }
 
 .coke {
@@ -93,17 +103,17 @@ h1{
 }
 
 /* Fries */
-.fries{
+.fries {
     background-image: url(images/freedomfries.jpg);
     background-size: cover;
 }
 
-.small{
+.small {
     background-image: url(images/frizz.jpg);
     background-size: cover;
 }
 
-.medium{
+.medium {
     background-image: url(images/medium.jpg);
     background-size: cover;
 }
@@ -197,21 +207,21 @@ h2, .Reviews{
 }
 
 /* styles */
-.outline{
+.outline {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-.center{
+.center {
     display: flex;
     justify-content: center;
-      
+
 }
 
-.big{
+.big {
     font: 2em;
 }
 
-.topBit{
+.topBit {
     border: 1px black solid;
     background-color: black;
     opacity: 0.5;

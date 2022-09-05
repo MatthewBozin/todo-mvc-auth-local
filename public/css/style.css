@@ -124,7 +124,7 @@ header{
 
 .Login{
     font-weight: bold;
-    color: darkred;
+    color: orange;
     display: block;
     margin: 10px;
     float: left;
@@ -133,7 +133,7 @@ header{
 
 .Signup{
     font-weight: bold;
-    color: darkred;
+    color: orange;
     display: block;
     margin: 10px;
     float: left;
@@ -141,7 +141,7 @@ header{
 
 .AboutUs{
     font-weight: bold;
-    color: darkred;
+    color: orange;
     display: block; 
     margin: 10px;
     float: left;
@@ -174,21 +174,21 @@ h2, .Reviews{
 
 .reviewOne{
     text-align: center;
-    color: blue;
+    color: orange;
     font-size: 50px;
     margin-bottom: 10px;
 }
 
 .reviewTwo{
     text-align: center;
-    color: blue;
+    color: orange;
     font-size: 50px;
     margin-top: 20px;
 }
 
 .reviewThree{
     text-align: center;
-    color: blue;
+    color: orange;
     font-size: 50px;
 }
 .todoBackg{
@@ -217,4 +217,14 @@ h2, .Reviews{
     opacity: 0.5;
     width: auto;
     color: whitesmoke
+}
+
+form{
+    text-align: center;
+}
+
+form, span{
+    font-size: 30px;
+    color: orange;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }

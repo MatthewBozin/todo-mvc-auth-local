@@ -2,51 +2,61 @@
     "cheeseburger":{
         "name":"Cheeseburger",
         "price":4.99,
-        "class":"butt cheeburger"
+        "class":"butt cheeburger",
+        "url":"images/cheesebur.jpg"
     },
     "burger":{
         "name":"Hamburger",
         "price":3.99,
-        "class":"butt burger"
+        "class":"butt burger",
+        "url":"images/burger.jpg"
     },
     "waffleburger":{
         "name":"Waffle burger",
         "price":5.99,
-        "class":"butt waffle"
+        "class":"butt waffle",
+        "url":"images/waffle.jpg"
     },
     "smallfries":{
         "name":"Small Fries",
         "price":2.99,
-        "class":"buttOn small outline"
+        "class":"buttOn small outline",
+        "url":"images/frizz.jpg"
     },
     "mediumfries":{
         "name":"Medium Fries",
         "price":3.99,
-        "class":"buttOn medium outline"
+        "class":"buttOn medium outline",
+        "url":"images/medium.jpg"
     },
-    "extrabig*ssfries":{
-        "name":"Extra Big *ss Fries",
+    "extrabigfries":{
+        "name":"Extra Big Fries",
         "price":4.99,
-        "class":"buttOn fries outline"
+        "class":"buttOn fries outline",
+        "url":"images/freedomfries.jpg"
     },
     "coke":{
         "name":"Coke",
         "price":1.99,
-        "class":"leButt coke outline"
+        "class":"leButt coke outline",
+        "url":"images/drink.jpg"
     },
     "cokezero":{
         "name":"Coke Zero",
         "price":2.99,
-        "class":"leButt coke_zero outline"
+        "class":"leButt coke_zero outline",
+        "url":"images/coke_zero.jpg"
     },
     "dietcoke":{
         "name":"Diet Coke",
         "price":2.99,
-        "class":"leButt diet_coke outline"
+        "class":"leButt diet_coke outline",
+        "url":"images/diet_coke.jpg"
     },
     "sprite":{
         "name":"Sprite",
         "price":1.99,
-        "class":"leButt sprite outline"
+        "class":"leButt sprite outline",
+        "url":"images/sprite.jpg"
     }
 }

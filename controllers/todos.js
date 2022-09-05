@@ -16,7 +16,10 @@ module.exports = {
                 itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
             }
             todoItems.map((item) => {item.foodData = food[item.todo.toLowerCase().replaceAll(" ", "")]})
-            const total = todoItems.reduce((acc, el) => {return acc+el.foodData.price},0).toFixed(2);
+            const total = todoItems.reduce((acc, el) => {
+                if (!el) return acc;
+                return acc+el.foodData.price
+            },0).toFixed(2);
             const foodList = Object.keys(food).map(key => food[key]);
             //renders todos page, passes in todo data
             res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user, total: total, foodList: foodList})

@@ -41,7 +41,8 @@ module.exports = {
     },
     createTodo: async (req, res)=>{
         try{
-            await Todo.create({todo: req.body.todoItem, completed: false, userId: req.user.id})
+            let date = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')
+            await Todo.create({todo: req.body.todoItem, completed: false, userId: req.user.id, date: date})
             console.log('Todo has been added!')
             res.redirect('/todos')
         }catch(err){

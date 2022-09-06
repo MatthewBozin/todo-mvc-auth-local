@@ -32,8 +32,32 @@ module.exports = {
             //turns food.json into an array of objects, one object for each type of food
             const foodList = Object.keys(food).map(key => food[key]);
 
+            if (req.user.chef === 'on') {
+                //use todoItems
+                //sort the todos into arrays, one for each customer
+                let ids = [];
+
+                todoItems.forEach((todo)=>{
+                    console.log(todo);
+                    if (!ids.includes(todo.userId)) ids.push(todo.userId)
+                })
+
+                let todoLists = ids.map((id) => {
+                    return todoItems.filter(todo => todo.userId === id)
+                })
+
+                console.log(todoLists);
+
+                // let todoListsObj = ids.reduce((obj, id) => {
+                //     return obj[id] = todoItems.filter(todo => todo.userId === id)
+                // })
+                //send array of arrays to todos.ejs
+                todoItems = todoLists;
+            }
+
             //renders todos page, passes in data that will be consumed by todos.ejs
             res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user, total: total, foodList: foodList})
+
 
         }catch(err){
             console.log(err)

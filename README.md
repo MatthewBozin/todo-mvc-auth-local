@@ -1,44 +1,42 @@
-# Introduction
-
-A Simple ToDo App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
+A MEEN stack app that uses MVC architecture to help manage orders for a restaurant.
 
 ---
 
-> Be sure to add that lovely star 😀 and fork it for your own copy
+# Features
+
+- Auth system that manages user accounts and validates logins/signups
+- View for customers shows the customer's orders along with menu
+- View for chefs shows all orders grouped by customer ID
+- All orders are timestamped
+
+# How it's made:
+
+Tech stack: MongoDB, Express, EJS, Node
+
+Architecture used: Model-View-Controller
+
+Packages/dependencies used: bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator
 
 ---
 
-# Objectives
+# Optimizations
 
-- It's a beginner level app created to understand how MVC concept and logins are added
-
----
-
-# Who is this for? 
-
-- It's for beginners & intermediates with little more experience, to help understand the various aspects of building a node app with some complex features
+- todos.ejs could be split into two separate pages instead of using conditional rendering
+- Could use a visual overhaul - we focused on getting things functional first
 
 ---
 
-# Packages/Dependencies used 
+# Lessons Learned
 
-bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator
-
----
-
-# Install all the dependencies or node packages used for development via Terminal
-
-`npm install` 
+- Organizing and properly labeling commits ends up making project management a really smooth process!
 
 ---
 
-# Things to add
+# How to Use
 
+- Install all the dependencies or node packages used for development via Terminal: `npm install` 
 - Create a `.env` file and add the following as `key: value` 
   - PORT: 2121 (can be any port example: 3000) 
   - DB_STRING: `your database URI` 
- ---
- 
- Have fun testing and improving it! 😎
 
 
